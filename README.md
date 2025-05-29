@@ -5,6 +5,21 @@ An intelligent chatbot system for appliance parts search, troubleshooting, and o
 Frontend - ReactJS, MaterialUI
 Backend - FastAPI, DeepSeek AI, VectorDB, Selenium, etc
 
+## Design Decisions 
+
+I  want to explain my design decisions here. 
+
+- For the frontend, it was an easy decision to use materialUI since it provides a sleek ui for the interface 
+
+- For the backend, I thought it was best to have two seperate databases. The first one is vectorDB via Weaviate which will store a lot of information on the items, blogs, and guides. Since we need to query with semantics, I thought it would be better to store these in the vectorDB. For orders/transactions, since its just a relational schema and most of the time, I will just be querying by the transactionID so I used a sqliteDB. In addition, for the future, I would implement a login system so I can even query by (transactionsID, UserID)
+
+- I also wanted to try building my own agents so I can take this at least as a chance for learning something that I had no experiences in. I learned a lot, thank you for htis oppertunity.
+
+- Also I read anthropic's paper on MCP and I wanted to try to implement it, but I didn't have time and knowledge. 
+
+
+
+
 ## Features
 
 ### **Intelligent Search**
